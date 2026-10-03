@@ -1,0 +1,19 @@
+{
+  "backend": "mujoco",
+  "duration_sim_s": 6,
+  "wall_s": 0.1491961579999952,
+  "simulation_hz": 100.0,
+  "steps": 600,
+  "active_steps": 598,
+  "commands_accepted": 598,
+  "commands_rejected": 0,
+  "accepted_sample_to_receive_p95_ms": 10.000000000000675,
+  "compute_per_tick_p95_ms": 0.5169113000079046,
+  "raw_target_vs_observation_rmse_rad": 0.010658787182454303,
+  "next_action_vs_observation_rmse_rad": 0.010657130421917512,
+  "previous_action_vs_observation_rmse_rad": 0.010187353645086761,
+  "blackout_to_hold_ms": null,
+  "final_mode": "ACTIVE",
+  "final_reason": "armed",
+  "measurement_scope": "synthetic input; discrete network simulator; latency quantized to control ticks; no real network/hardware claim"
+}

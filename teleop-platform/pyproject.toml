@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gello-teleop-reference"
+version = "0.2.0"
+description = "Simulation-first remote teleoperation reference, not a real-time hardware controller"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24,<3"]
+
+[project.optional-dependencies]
+mujoco = ["mujoco==3.3.7"]
+demo = ["mujoco==3.3.7", "Pillow>=10"]
+
+[project.scripts]
+teleop = "teleop.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["teleop*"]
+
+[tool.setuptools.package-data]
+teleop = ["web/*", "assets/franka_emika_panda/*", "assets/franka_emika_panda/assets/*"]

@@ -1,0 +1,78 @@
+{
+  "schema_version": "teleop-1.0",
+  "created_utc": "2026-10-03T12:47:39.248114+00:00",
+  "config": {
+    "name": "franka_panda_menagerie_sim",
+    "home": [
+      0,
+      0,
+      0,
+      -1.57079,
+      0,
+      1.57079,
+      -0.7853
+    ],
+    "lower": [
+      -2.5,
+      -1.5,
+      -2.5,
+      -2.8,
+      -2.5,
+      0.1,
+      -2.5
+    ],
+    "upper": [
+      2.5,
+      1.5,
+      2.5,
+      -0.2,
+      2.5,
+      3.4,
+      2.5
+    ],
+    "velocity": [
+      0.4,
+      0.4,
+      0.4,
+      0.4,
+      0.4,
+      0.4,
+      0.4
+    ],
+    "acceleration": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "hz": 100.0,
+    "watchdog_s": 0.15,
+    "lease_s": 0.12,
+    "align_tolerance_rad": 0.08,
+    "tracking_fault_rad": 0.35
+  },
+  "config_sha256": "d7c683dd3615d83152e5e89bf5a94a653f330fc7ad6e1eb07f7eeb5bdce2c282",
+  "joint_unit": "rad",
+  "time_unit": "s",
+  "time_domain": "robot_monotonic_relative",
+  "action_semantics": "safe absolute joint position command applied AFTER observation",
+  "gripper_semantics": "0=open,1=closed; simulated Panda finger joints",
+  "success": null,
+  "success_source": "unlabeled",
+  "complete": true,
+  "backend": "panda",
+  "operator": "browser_joint_sliders",
+  "task": "manual_joint_demonstration",
+  "transport": "localhost HTTP",
+  "model_source": "MuJoCo Menagerie franka_emika_panda",
+  "model_commit": "4d038b3feae26ec82b46a4d586379114012a8ac7",
+  "rows": 3517,
+  "writer_error": null,
+  "steps_sha256": "1e67973ee1c187b468326c0f849031a552ac1ea14dd55549a56515361f97a073",
+  "operator_execution": "automated_ui_mouse_and_button_actions",
+  "human_collected": false,
+  "dataset_purpose": "simulation_interface_demonstration"
+}

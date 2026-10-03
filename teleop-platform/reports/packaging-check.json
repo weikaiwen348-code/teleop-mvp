@@ -1,0 +1,6 @@
+{
+  "wheel": "gello_teleop_reference-0.2.0-py3-none-any.whl",
+  "wheel_bytes": 5481579,
+  "independent_panda_load": true,
+  "local_control_worker": true
+}

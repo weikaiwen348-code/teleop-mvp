@@ -1,0 +1,24 @@
+{
+  "server": {
+    "backend": "panda",
+    "elapsed_wall_s": 5.013496037000095,
+    "steps": 484,
+    "actual_hz": 96.53940639196568,
+    "period_p95_ms": 10.272100849670096,
+    "overruns": 5,
+    "bad_packets": 0,
+    "accepted": 176,
+    "rejected": 16,
+    "final_mode": "FAULT",
+    "final_reason": "control_deadline",
+    "measurement_scope": "local wall-clock process run; no one-way latency measurement"
+  },
+  "client": {
+    "sent": 192,
+    "ack_p95_ms": 11.8028450001475,
+    "ack_metric": "command send to state acknowledging receipt; includes server cycle; not one-way latency"
+  },
+  "backend": "panda",
+  "scope": "localhost UDP; wall time; simulated plant",
+  "last_accepted_packet_to_hold_ms": null
+}

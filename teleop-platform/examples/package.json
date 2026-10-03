@@ -1,0 +1,8 @@
+{
+  "name": "teleop-browser-validation",
+  "private": true,
+  "version": "0.2.0",
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

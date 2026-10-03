@@ -1,0 +1,34 @@
+test_constant_target_settles_without_limit_cycle (test_core.ControllerTests.test_constant_target_settles_without_limit_cycle) ... ok
+test_control_deadline_fault (test_core.ControllerTests.test_control_deadline_fault) ... ok
+test_deadman_and_estop (test_core.ControllerTests.test_deadman_and_estop) ... ok
+test_real_motion_unavailable (test_core.ControllerTests.test_real_motion_unavailable) ... ok
+test_replay_does_not_refresh_watchdog (test_core.ControllerTests.test_replay_does_not_refresh_watchdog) ... ok
+test_stale_packet_and_bad_data (test_core.ControllerTests.test_stale_packet_and_bad_data) ... ok
+test_start_disarmed_and_alignment (test_core.ControllerTests.test_start_disarmed_and_alignment) ... ok
+test_timeout_latches_until_new_arm_epoch (test_core.ControllerTests.test_timeout_latches_until_new_arm_epoch) ... ok
+test_tracking_fault (test_core.ControllerTests.test_tracking_fault) ... ok
+test_velocity_acceleration_and_joint_limits (test_core.ControllerTests.test_velocity_acceleration_and_joint_limits) ... ok
+test_blackout_stops_and_does_not_rearm (test_core.EpisodeTests.test_blackout_stops_and_does_not_rearm) ... ok
+test_complete_export_and_checksum (test_core.EpisodeTests.test_complete_export_and_checksum) ... ok
+test_delay_exceeds_freshness_budget (test_core.EpisodeTests.test_delay_exceeds_freshness_budget) ... ok
+test_incomplete_rejected (test_core.EpisodeTests.test_incomplete_rejected) ... ok
+test_mujoco_integration (test_core.EpisodeTests.test_mujoco_integration) ... ok
+test_bad_excitation (test_core.MappingTests.test_bad_excitation) ... ok
+test_different_topology_rejected (test_core.MappingTests.test_different_topology_rejected) ... ok
+test_fit_independent_pose (test_core.MappingTests.test_fit_independent_pose) ... ok
+test_sign_offset_gain (test_core.MappingTests.test_sign_offset_gain) ... ok
+test_lease_without_clock_sync (test_core.WireTests.test_lease_without_clock_sync) ... ok
+test_malformed_command (test_core.WireTests.test_malformed_command) ... ok
+test_roundtrip_and_tamper (test_core.WireTests.test_roundtrip_and_tamper) ... ok
+test_size_and_nan (test_core.WireTests.test_size_and_nan) ... ok
+test_two_process_udp_and_sender_exit (test_network.NetworkTests.test_two_process_udp_and_sender_exit) ... ok
+test_virtual_source_starts_at_home_after_slow_backend_start (test_network.NetworkTests.test_virtual_source_starts_at_home_after_slow_backend_start) ... ok
+test_local_control_rearm_and_complete_export (test_panda.PandaTests.test_local_control_rearm_and_complete_export) ... ok
+test_local_input_rejects_coerced_angles_and_wrong_session (test_panda.PandaTests.test_local_input_rejects_coerced_angles_and_wrong_session) ... ok
+test_model_ranges_reject_incompatible_configuration (test_panda.PandaTests.test_model_ranges_reject_incompatible_configuration) ... ok
+test_public_model_and_native_gripper_tracking (test_panda.PandaTests.test_public_model_and_native_gripper_tracking) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 11.953s
+
+OK

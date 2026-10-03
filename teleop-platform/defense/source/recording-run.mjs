@@ -1,0 +1,65 @@
+import {createRequire} from 'node:module';
+import {spawn} from 'node:child_process';
+import fs from 'node:fs/promises';
+const require=createRequire(import.meta.url);
+const {chromium}=require(process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES+'/playwright');
+const root='/workspace/scratch/4a2d12871e46';
+const media=root+'/defense-media';
+const server=spawn('python',['-m','teleop','ui','--output',root+'/demo-episode-final','--port','8092'],{cwd:root+'/defense-build/teleop-platform',stdio:['ignore','pipe','pipe']});
+let logs='';server.stderr.on('data',d=>logs+=d.toString());
+await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('server start timeout '+logs)),30000);server.stdout.on('data',d=>{if(d.toString().includes('人工控制')){clearTimeout(timer);resolve()}});server.on('exit',c=>reject(Error('Server exited '+c+' '+logs)))});
+let browser,context;
+const marks=[];const start=Date.now();
+const mark=text=>marks.push({time_s:(Date.now()-start)/1000,text});
+try{
+ browser=await chromium.launch({executablePath:root+'/browser-runtime/chrome-headless-shell-linux64/chrome-headless-shell',headless:true,args:['--no-sandbox','--use-angle=swiftshader','--enable-unsafe-swiftshader','--disable-dev-shm-usage']});
+ context=await browser.newContext({viewport:{width:1500,height:1000},recordVideo:{dir:media+'/raw',size:{width:1500,height:1000}}});
+ const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('http://127.0.0.1:8092');await page.waitForFunction(()=>window.teleopView?.isModelReady(),{timeout:30000});
+ const unauthorized=await page.request.post('http://127.0.0.1:8092/api/action',{data:{action:'estop'}});
+ if(unauthorized.status()!==400)throw Error('control token missing was not rejected');
+ mark('Panda 仿真模型；此视频通过自动操作真实界面录制');
+ await page.waitForTimeout(2500);await page.locator('#enable').click();
+ await page.waitForFunction(()=>window.teleopView.getState().mode==='ACTIVE');mark('人工使能：对齐当前位置，再开启跟随');
+ await page.waitForTimeout(1200);
+ async function drag(id,target){
+  const input=page.locator(id);const b=await input.boundingBox();
+  const v=await input.evaluate(e=>({min:Number(e.min),max:Number(e.max),value:Number(e.value)}));
+  const x=value=>b.x+9+(b.width-18)*(value-v.min)/(v.max-v.min);
+  await page.mouse.move(x(v.value),b.y+b.height/2);await page.mouse.down();
+  for(let i=1;i<=12;i++){await page.mouse.move(x(v.value+(target-v.value)*i/12),b.y+b.height/2);await page.waitForTimeout(45)}
+  await page.mouse.up();
+ }
+ mark('关节控制：输入目标经速度与加速度约束后执行');
+ await drag('#joint-0',.55);await page.waitForTimeout(2700);
+ await drag('#joint-1',-.22);await page.waitForTimeout(2200);
+ await drag('#joint-3',-1.30);await page.waitForTimeout(2500);
+ await page.screenshot({path:media+'/demo-active.png'});
+ const moved=await page.evaluate(()=>window.teleopView.getState());
+ if(moved.mode!=='ACTIVE'||moved.q[0]<.4)throw Error('joint motion did not remain ACTIVE '+JSON.stringify(moved.q));
+ mark('夹爪控制：同样记录目标与仿真观测');
+ await drag('#gripper',.90);await page.waitForTimeout(2200);
+ const grip=await page.evaluate(()=>window.teleopView.getState().gripper);
+ await page.screenshot({path:media+'/demo-gripper.png'});
+ if(grip<.75)throw Error('gripper did not close '+grip);
+ mark('断流演示：暂停发送，机器人端独立触发 HOLD');
+ await page.locator('#pause').click();await page.waitForFunction(()=>window.teleopView.getState().mode==='HOLD');
+ await page.screenshot({path:media+'/demo-hold.png'});await page.waitForTimeout(2200);
+ mark('恢复需重新对齐、人工使能；不会自动恢复运动');
+ await page.locator('#pause').click();await page.locator('#enable').click();
+ await page.waitForFunction(()=>window.teleopView.getState().mode==='ACTIVE');await page.waitForTimeout(1600);
+ await drag('#gripper',0);await page.waitForTimeout(1700);
+ mark('软件急停锁定；本地复位后回到未使能');
+ await page.locator('#estop').click();await page.waitForFunction(()=>window.teleopView.getState().mode==='ESTOP');
+ await page.screenshot({path:media+'/demo-estop.png'});await page.waitForTimeout(1600);
+ await page.locator('#reset').click();await page.waitForFunction(()=>window.teleopView.getState().mode==='DISARMED');await page.waitForTimeout(1400);
+ mark('结束保存：JSONL、元数据、校验和、NPZ');
+ await page.locator('#finish').click();await page.waitForFunction(()=>window.teleopView.getState().summary?.complete===true);
+ await page.screenshot({path:media+'/demo-saved.png'});await page.waitForTimeout(2500);
+ const video=page.video();await context.close();context=null;
+ await fs.copyFile(await video.path(),media+'/demo-raw.webm');
+ const checks={modelLoaded:true,interactiveMotion:true,gripperClosed:grip,disconnectHold:true,explicitRearm:true,estopReset:true,completeExport:true,unauthorizedControlRejected:true,pageErrors:errors,recordingMethod:'Playwright mouse and button actions through actual UI; not physical GELLO or human study'};
+ await fs.writeFile(media+'/demo-checks.json',JSON.stringify(checks,null,2));
+ await fs.writeFile(media+'/demo-marks.json',JSON.stringify(marks,null,2));
+ console.log(JSON.stringify(checks));if(errors.length)throw Error('page errors');
+}finally{if(context)await context.close();if(browser)await browser.close();server.kill('SIGINT')}

@@ -1,0 +1,46 @@
+{
+  "backend": "panda",
+  "operator": "browser_joint_sliders",
+  "steps": 3517,
+  "elapsed_wall_s": 35.43279776999998,
+  "actual_hz": 99.25832057715046,
+  "period_p95_ms": 11.763653999878443,
+  "accepted": 573,
+  "rejected": 0,
+  "events": [
+    {
+      "time_s": 0.0002133160000994394,
+      "mode": "DISARMED",
+      "reason": "startup"
+    },
+    {
+      "time_s": 3.963835091999954,
+      "mode": "ACTIVE",
+      "reason": "armed"
+    },
+    {
+      "time_s": 22.09437141799981,
+      "mode": "HOLD",
+      "reason": "input_timeout"
+    },
+    {
+      "time_s": 25.866289136999967,
+      "mode": "ACTIVE",
+      "reason": "armed"
+    },
+    {
+      "time_s": 30.86297690399988,
+      "mode": "ESTOP",
+      "reason": "local_ui_estop"
+    },
+    {
+      "time_s": 33.72138350499972,
+      "mode": "DISARMED",
+      "reason": "local_reset"
+    }
+  ],
+  "complete": true,
+  "error": null,
+  "stop_reason": "operator_saved",
+  "scope": "interactive simulator; no physical robot, force feedback or WAN measurement"
+}

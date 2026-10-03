@@ -1,0 +1,23 @@
+{
+  "server": {
+    "backend": "toy",
+    "elapsed_wall_s": 5.013217870000062,
+    "steps": 498,
+    "actual_hz": 99.33737684968662,
+    "period_p95_ms": 10.14156615013917,
+    "overruns": 1,
+    "bad_packets": 0,
+    "accepted": 301,
+    "rejected": 0,
+    "final_mode": "HOLD",
+    "final_reason": "input_timeout",
+    "measurement_scope": "local wall-clock process run; no one-way latency measurement"
+  },
+  "client": {
+    "sent": 301,
+    "ack_p95_ms": 10.59094970000842,
+    "ack_metric": "command send to state acknowledging receipt; includes server cycle; not one-way latency"
+  },
+  "scope": "localhost UDP; wall time; simulated plant",
+  "last_accepted_packet_to_hold_ms": 119.9896240000271
+}

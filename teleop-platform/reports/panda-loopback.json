@@ -1,0 +1,30 @@
+{
+  "server": {
+    "backend": "panda",
+    "elapsed_wall_s": 5.015506789999563,
+    "steps": 496,
+    "actual_hz": 98.89328029574142,
+    "period_p95_ms": 10.064655749829399,
+    "overruns": 2,
+    "bad_packets": 0,
+    "accepted": 250,
+    "rejected": 0,
+    "final_mode": "HOLD",
+    "final_reason": "input_timeout",
+    "measurement_scope": "local wall-clock process run; no one-way latency measurement"
+  },
+  "client": {
+    "sent": 250,
+    "ack_p95_ms": 10.334707249967323,
+    "ack_metric": "command send to state acknowledging receipt; includes server cycle; not one-way latency"
+  },
+  "backend": "panda",
+  "scope": "localhost UDP; wall time; simulated plant",
+  "last_accepted_packet_to_hold_ms": 119.98971599950892,
+  "checks": {
+    "motion_commands_accepted": true,
+    "sender_exit_hold": true,
+    "hold_event_recorded": true
+  },
+  "passed": true
+}

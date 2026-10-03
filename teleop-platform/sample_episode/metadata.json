@@ -1,0 +1,80 @@
+{
+  "schema_version": "teleop-1.0",
+  "created_utc": "2026-09-29T03:29:39.685349+00:00",
+  "config": {
+    "name": "panda7_layout_sim_only",
+    "home": [
+      0,
+      -0.4,
+      0,
+      -1.8,
+      0,
+      1.4,
+      0.7
+    ],
+    "lower": [
+      -2.5,
+      -1.5,
+      -2.5,
+      -2.8,
+      -2.5,
+      0.1,
+      -2.5
+    ],
+    "upper": [
+      2.5,
+      1.5,
+      2.5,
+      -0.2,
+      2.5,
+      3.4,
+      2.5
+    ],
+    "velocity": [
+      0.4,
+      0.4,
+      0.4,
+      0.4,
+      0.4,
+      0.4,
+      0.4
+    ],
+    "acceleration": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "hz": 100.0,
+    "watchdog_s": 0.15,
+    "lease_s": 0.12,
+    "align_tolerance_rad": 0.08,
+    "tracking_fault_rad": 0.35
+  },
+  "config_sha256": "e753a302aaeca93fee436c28c709e4f77e20e5451773a291c8c73705c22c4dd0",
+  "joint_unit": "rad",
+  "time_unit": "s",
+  "time_domain": "simulation_clock",
+  "action_semantics": "safe absolute joint position command applied AFTER observation",
+  "gripper_semantics": "normalized: 0=open, 1=closed; sim scalar, no physical gripper",
+  "success": null,
+  "success_source": "unlabeled",
+  "complete": true,
+  "backend": "mujoco",
+  "task": "synthetic_joint_tracking",
+  "operator": "virtual_gello",
+  "seed": 7,
+  "network": {
+    "one_way_delay_ms": 5,
+    "jitter_std_ms": 1,
+    "independent_loss_each_direction": 0
+  },
+  "blackout_at_sim_s": null,
+  "real_time_pacing": false,
+  "rows": 600,
+  "writer_error": null,
+  "steps_sha256": "397e9ab53fbe7a589b53c8c45702a67d70bcdec81b8ab1ec8d3f2d85baea86a0"
+}

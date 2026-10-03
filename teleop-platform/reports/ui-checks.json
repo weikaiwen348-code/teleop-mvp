@@ -1,0 +1,12 @@
+{
+  "modelLoaded": true,
+  "interactiveMotion": true,
+  "gripperClosed": 0.899999999970364,
+  "disconnectHold": true,
+  "explicitRearm": true,
+  "estopReset": true,
+  "completeExport": true,
+  "unauthorizedControlRejected": true,
+  "pageErrors": [],
+  "recordingMethod": "Playwright mouse and button actions through actual UI; not physical GELLO or human study"
+}

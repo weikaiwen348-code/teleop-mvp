@@ -1,0 +1,3 @@
+# Core versions used in the delivered Linux validation. Not a full dependency lock.
+numpy==2.3.5
+mujoco==3.3.7
