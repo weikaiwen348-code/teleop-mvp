@@ -1,0 +1,74 @@
+{
+  "schema_version": "teleop-1.0",
+  "created_utc": "2026-10-04T05:34:02.104630+00:00",
+  "config": {
+    "name": "franka_panda_menagerie_sim",
+    "home": [
+      0,
+      0,
+      0,
+      -1.57079,
+      0,
+      1.57079,
+      -0.7853
+    ],
+    "lower": [
+      -2.5,
+      -1.5,
+      -2.5,
+      -2.8,
+      -2.5,
+      0.1,
+      -2.5
+    ],
+    "upper": [
+      2.5,
+      1.5,
+      2.5,
+      -0.2,
+      2.5,
+      3.4,
+      2.5
+    ],
+    "velocity": [
+      0.4,
+      0.4,
+      0.4,
+      0.4,
+      0.4,
+      0.4,
+      0.4
+    ],
+    "acceleration": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "hz": 100.0,
+    "watchdog_s": 0.15,
+    "lease_s": 0.12,
+    "align_tolerance_rad": 0.08,
+    "tracking_fault_rad": 0.35
+  },
+  "config_sha256": "d7c683dd3615d83152e5e89bf5a94a653f330fc7ad6e1eb07f7eeb5bdce2c282",
+  "joint_unit": "rad",
+  "time_unit": "s",
+  "time_domain": "robot_monotonic_relative",
+  "action_semantics": "safe absolute joint position command applied AFTER observation",
+  "gripper_semantics": "0=open,1=closed; simulated Panda fingers",
+  "success": null,
+  "success_source": "unlabeled",
+  "complete": true,
+  "backend": "panda",
+  "transport": "UDP-HMAC-SHA256",
+  "task": "remote_joint_tracking",
+  "operator": "remote_client",
+  "software_version": "0.3.0",
+  "rows": 500,
+  "writer_error": null,
+  "steps_sha256": "33092bca66365bde2fce7c23515922bb7e7fa914e81ede49eeb3036220e06df8"
+}

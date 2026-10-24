@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "python_executable": "/workspace/scratch/4a2d12871e46/audit-v03/work/teleop-platform/.venv/bin/python",
+  "checks": [
+    {
+      "name": "Python 3.10+",
+      "ok": true,
+      "detail": "3.12.14"
+    },
+    {
+      "name": "numpy",
+      "ok": true,
+      "detail": "2.5.3"
+    },
+    {
+      "name": "mujoco",
+      "ok": true,
+      "detail": "3.3.7"
+    },
+    {
+      "name": "模型与网页资源",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "Panda 模型加载",
+      "ok": true,
+      "detail": {
+        "actuators": 8,
+        "velocity_dofs": 9
+      }
+    }
+  ],
+  "scope": "local dependencies/model only; browser and physical hardware not certified"
+}

@@ -1,0 +1,41 @@
+{
+  "episode": "/workspace/scratch/4a2d12871e46/audit-v03/work/teleop-platform/manual_demo_episode",
+  "integrity_passed": true,
+  "errors": [],
+  "warnings": [
+    "任务成功尚未标注；完整保存不代表任务成功。",
+    "没有已确认的人工采集身份，不自动作为人类示教数据。"
+  ],
+  "task_success": null,
+  "scope": "simulation data integrity, not physical accuracy or task success",
+  "software_version": "not recorded (historical sample)",
+  "backend": "panda",
+  "human_collected": false,
+  "rows": 3517,
+  "joints": 7,
+  "active_rows": 2302,
+  "state_counts": {
+    "DISARMED": 553,
+    "ACTIVE": 2302,
+    "HOLD": 377,
+    "ESTOP": 285,
+    "FAULT": 0
+  },
+  "timestamp_span_s": 35.286207531999935,
+  "sample_frequency_hz": 99.6423318321033,
+  "period_p95_ms": 11.763653999878443,
+  "observation_vs_previous_action_rmse_rad": 0.005247305304672909,
+  "observed_joint_range_rad": [
+    0.5450067306630598,
+    0.22283575190873878,
+    0.0006989646134795405,
+    0.27144848786618847,
+    0.000377032061893301,
+    0.0024758446747350504,
+    0.0003038331381468584
+  ],
+  "complete": true,
+  "checksum_verified": true,
+  "config_checksum_verified": true,
+  "npz_matches_jsonl": true
+}

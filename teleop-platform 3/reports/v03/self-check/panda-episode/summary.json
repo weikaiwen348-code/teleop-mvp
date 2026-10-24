@@ -1,0 +1,19 @@
+{
+  "backend": "panda",
+  "duration_sim_s": 2,
+  "wall_s": 0.05714088200011247,
+  "simulation_hz": 100.0,
+  "steps": 200,
+  "active_steps": 200,
+  "commands_accepted": 200,
+  "commands_rejected": 0,
+  "accepted_sample_to_receive_p95_ms": 0.0,
+  "compute_per_tick_p95_ms": 0.4064062501811349,
+  "raw_target_vs_observation_rmse_rad": 0.007521084592386933,
+  "next_action_vs_observation_rmse_rad": 0.006295843449659423,
+  "previous_action_vs_observation_rmse_rad": 0.0059183580262300904,
+  "blackout_to_hold_ms": null,
+  "final_mode": "ACTIVE",
+  "final_reason": "armed",
+  "measurement_scope": "synthetic input; discrete network simulator; latency quantized to control ticks; no real network/hardware claim"
+}

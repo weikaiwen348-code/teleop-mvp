@@ -1,0 +1,14 @@
+{
+  "backend": "panda",
+  "elapsed_wall_s": 5.001082132000192,
+  "steps": 500,
+  "actual_hz": 99.97835544587466,
+  "period_p95_ms": 10.016355250172637,
+  "overruns": 0,
+  "bad_packets": 0,
+  "accepted": 251,
+  "rejected": 0,
+  "final_mode": "HOLD",
+  "final_reason": "input_timeout",
+  "measurement_scope": "local wall-clock process run; no one-way latency measurement"
+}

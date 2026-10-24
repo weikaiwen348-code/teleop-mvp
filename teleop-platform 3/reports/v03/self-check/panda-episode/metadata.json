@@ -1,0 +1,82 @@
+{
+  "schema_version": "teleop-1.0",
+  "created_utc": "2026-10-04T05:34:01.235401+00:00",
+  "config": {
+    "name": "franka_panda_menagerie_sim",
+    "home": [
+      0,
+      0,
+      0,
+      -1.57079,
+      0,
+      1.57079,
+      -0.7853
+    ],
+    "lower": [
+      -2.5,
+      -1.5,
+      -2.5,
+      -2.8,
+      -2.5,
+      0.1,
+      -2.5
+    ],
+    "upper": [
+      2.5,
+      1.5,
+      2.5,
+      -0.2,
+      2.5,
+      3.4,
+      2.5
+    ],
+    "velocity": [
+      0.4,
+      0.4,
+      0.4,
+      0.4,
+      0.4,
+      0.4,
+      0.4
+    ],
+    "acceleration": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "hz": 100.0,
+    "watchdog_s": 0.15,
+    "lease_s": 0.12,
+    "align_tolerance_rad": 0.08,
+    "tracking_fault_rad": 0.35
+  },
+  "config_sha256": "d7c683dd3615d83152e5e89bf5a94a653f330fc7ad6e1eb07f7eeb5bdce2c282",
+  "joint_unit": "rad",
+  "time_unit": "s",
+  "time_domain": "simulation_clock",
+  "action_semantics": "safe absolute joint position command applied AFTER observation",
+  "gripper_semantics": "0=open,1=closed; simulated Panda fingers",
+  "success": null,
+  "success_source": "unlabeled",
+  "complete": true,
+  "backend": "panda",
+  "task": "synthetic_joint_tracking",
+  "operator": "virtual_gello",
+  "human_collected": false,
+  "seed": 7,
+  "network": {
+    "one_way_delay_ms": 0,
+    "jitter_std_ms": 0,
+    "independent_loss_each_direction": 0
+  },
+  "blackout_at_sim_s": null,
+  "real_time_pacing": false,
+  "software_version": "0.3.0",
+  "rows": 200,
+  "writer_error": null,
+  "steps_sha256": "e336c94e0749461dd91a16f1ce44b73fabb7d56c795d4baa3baa335c0762ad07"
+}

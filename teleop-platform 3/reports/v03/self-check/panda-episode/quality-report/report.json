@@ -1,0 +1,41 @@
+{
+  "episode": "/workspace/scratch/4a2d12871e46/audit-v03/final-check/panda-episode",
+  "integrity_passed": true,
+  "errors": [],
+  "warnings": [
+    "任务成功尚未标注；完整保存不代表任务成功。",
+    "没有已确认的人工采集身份，不自动作为人类示教数据。"
+  ],
+  "task_success": null,
+  "scope": "simulation data integrity, not physical accuracy or task success",
+  "software_version": "0.3.0",
+  "backend": "panda",
+  "human_collected": false,
+  "rows": 200,
+  "joints": 7,
+  "active_rows": 200,
+  "state_counts": {
+    "DISARMED": 0,
+    "ACTIVE": 200,
+    "HOLD": 0,
+    "ESTOP": 0,
+    "FAULT": 0
+  },
+  "timestamp_span_s": 1.99,
+  "sample_frequency_hz": 100.0,
+  "period_p95_ms": 10.000000000000009,
+  "observation_vs_previous_action_rmse_rad": 0.0059183580262300904,
+  "observed_joint_range_rad": [
+    0.057944902294068186,
+    0.07461432813385585,
+    0.07715785666877856,
+    0.08329011444348611,
+    0.09610373137429602,
+    0.10509937906361921,
+    0.11569844961960662
+  ],
+  "complete": true,
+  "checksum_verified": true,
+  "config_checksum_verified": true,
+  "npz_matches_jsonl": true
+}

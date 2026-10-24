@@ -1,0 +1,24 @@
+{
+  "scope": "Automated real browser interactions; no human study or physical hardware",
+  "scenarios": [
+    {
+      "name": "normal",
+      "modelLoaded": true,
+      "pageErrors": [],
+      "unauthorizedRejected": true,
+      "motionAndGripper": true,
+      "holdAndExplicitRearm": true,
+      "estopAndReset": true,
+      "completeExport": true,
+      "passed": true
+    },
+    {
+      "name": "export-failure",
+      "modelLoaded": true,
+      "pageErrors": [],
+      "exportFailureShown": true,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

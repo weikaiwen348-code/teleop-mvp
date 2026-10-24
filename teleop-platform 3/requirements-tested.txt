@@ -1,0 +1,5 @@
+# Core versions used in Linux validation; not a full dependency lock.
+# Primary environment: Python 3.12.14, NumPy 2.3.5, MuJoCo 3.3.7.
+# Fresh launcher environment also passed with NumPy 2.5.3, MuJoCo 3.3.7.
+numpy==2.3.5
+mujoco==3.3.7

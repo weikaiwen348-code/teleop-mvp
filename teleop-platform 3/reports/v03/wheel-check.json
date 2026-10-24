@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "python_executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+  "checks": [
+    {
+      "name": "Python 3.10+",
+      "ok": true,
+      "detail": "3.12.14"
+    },
+    {
+      "name": "numpy",
+      "ok": true,
+      "detail": "2.3.5"
+    },
+    {
+      "name": "mujoco",
+      "ok": true,
+      "detail": "3.3.7"
+    },
+    {
+      "name": "模型与网页资源",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "name": "Panda 模型加载",
+      "ok": true,
+      "detail": {
+        "actuators": 8,
+        "velocity_dofs": 9
+      }
+    }
+  ],
+  "scope": "local dependencies/model only; browser and physical hardware not certified",
+  "module_file": "/workspace/scratch/4a2d12871e46/audit-v03/wheel-site/teleop/__init__.py",
+  "software_version": "0.3.0"
+}
